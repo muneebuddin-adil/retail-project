@@ -1,0 +1,17 @@
+{
+	"name": "SqlServer",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lnkOnPrem",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "online_retail_sales_dataset"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

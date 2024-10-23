@@ -1,0 +1,9 @@
+{
+	"name": "ADF-ncpl-training",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "dd567e80-ed0c-421a-a9ef-c1a1ff1191b2",
+		"tenantId": "30069c05-1e44-468b-a6d9-8230c7f8d8d5"
+	}
+}

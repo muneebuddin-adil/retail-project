@@ -1,0 +1,84 @@
+{
+	"name": "healthcare_data",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Healthcare",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "HttpServerLocation",
+				"relativeUrl": "muneebuddin-adil/Healthcare/refs/heads/main/healthcare_dataset.csv"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "Name",
+				"type": "String"
+			},
+			{
+				"name": "Age",
+				"type": "String"
+			},
+			{
+				"name": "Gender",
+				"type": "String"
+			},
+			{
+				"name": "Blood Type",
+				"type": "String"
+			},
+			{
+				"name": "Medical Condition",
+				"type": "String"
+			},
+			{
+				"name": "Date of Admission",
+				"type": "String"
+			},
+			{
+				"name": "Doctor",
+				"type": "String"
+			},
+			{
+				"name": "Hospital",
+				"type": "String"
+			},
+			{
+				"name": "Insurance Provider",
+				"type": "String"
+			},
+			{
+				"name": "Billing Amount",
+				"type": "String"
+			},
+			{
+				"name": "Room Number",
+				"type": "String"
+			},
+			{
+				"name": "Admission Type",
+				"type": "String"
+			},
+			{
+				"name": "Discharge Date",
+				"type": "String"
+			},
+			{
+				"name": "Medication",
+				"type": "String"
+			},
+			{
+				"name": "Test Results",
+				"type": "String"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

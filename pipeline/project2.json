@@ -1,0 +1,116 @@
+{
+	"name": "project2",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy on-prem to ADLS",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "SqlServerSource",
+						"queryTimeout": "02:00:00",
+						"partitionOption": "None"
+					},
+					"sink": {
+						"type": "DelimitedTextSink",
+						"storeSettings": {
+							"type": "AzureBlobFSWriteSettings"
+						},
+						"formatSettings": {
+							"type": "DelimitedTextWriteSettings",
+							"quoteAllText": true,
+							"fileExtension": ".txt"
+						}
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"typeConversion": true,
+						"typeConversionSettings": {
+							"allowDataTruncation": true,
+							"treatBooleanAsNumber": false
+						}
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "SqlServer",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "retailSales",
+						"type": "DatasetReference"
+					}
+				]
+			},
+			{
+				"name": "cleaning dataset",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "Copy on-prem to ADLS",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/muneebuddin_adil98@hotmail.com/project2"
+				},
+				"linkedServiceName": {
+					"referenceName": "project1_ncpl",
+					"type": "LinkedServiceReference"
+				}
+			},
+			{
+				"name": "transformation databricks",
+				"type": "DatabricksNotebook",
+				"dependsOn": [
+					{
+						"activity": "cleaning dataset",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"notebookPath": "/Users/muneebuddin_adil98@hotmail.com/project2file2"
+				},
+				"linkedServiceName": {
+					"referenceName": "project1_ncpl",
+					"type": "LinkedServiceReference"
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2024-10-14T08:22:00Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

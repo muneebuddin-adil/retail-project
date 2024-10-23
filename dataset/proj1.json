@@ -1,0 +1,70 @@
+{
+	"name": "proj1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "lnkOnPrem",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [
+			{
+				"name": "transaction_id",
+				"type": "varchar"
+			},
+			{
+				"name": "timestamp",
+				"type": "varchar"
+			},
+			{
+				"name": "customer_id",
+				"type": "varchar"
+			},
+			{
+				"name": "product_id",
+				"type": "varchar"
+			},
+			{
+				"name": "product_category",
+				"type": "varchar"
+			},
+			{
+				"name": "quantity",
+				"type": "varchar"
+			},
+			{
+				"name": "price",
+				"type": "varchar"
+			},
+			{
+				"name": "discount",
+				"type": "varchar"
+			},
+			{
+				"name": "payment_method",
+				"type": "varchar"
+			},
+			{
+				"name": "customer_age",
+				"type": "varchar"
+			},
+			{
+				"name": "customer_gender",
+				"type": "varchar"
+			},
+			{
+				"name": "customer_location",
+				"type": "varchar"
+			},
+			{
+				"name": "total_amount",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "online_retail_sales_dataset AMIR"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

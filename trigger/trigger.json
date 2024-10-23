@@ -1,0 +1,25 @@
+{
+	"name": "trigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "pipeline",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/pop-io/blobs/",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/e3c6c246-8c93-4287-937b-d06c134eec19/resourceGroups/DE/providers/Microsoft.Storage/storageAccounts/storage1998de",
+			"events": [
+				"Microsoft.Storage.BlobCreated",
+				"Microsoft.Storage.BlobDeleted"
+			]
+		}
+	}
+}

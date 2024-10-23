@@ -1,0 +1,21 @@
+{
+	"name": "lnkOnPrem",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "storage1998.database.windows.net",
+			"database": "malik",
+			"encrypt": "mandatory",
+			"trustServerCertificate": false,
+			"authenticationType": "SQL",
+			"userName": "muneeb",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiJmNGQwNGU0Yi0zOWJjLTQzZDctYjhkZS0wODVhYjllYjkzODkiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "selfhosted-proj2",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}
