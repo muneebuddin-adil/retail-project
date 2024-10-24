@@ -1,4 +1,4 @@
-# Project 2: Retail Project
+# Retail Project
 
 ### Project Overview:
 The primary goal of this project is to optimize inventory management and enhance sales forecasting for an online retail platform. By leveraging available data, the project aims to ensure that inventory levels align with customer demand, reducing excess stock and stockouts while improving customer satisfaction and profitability.
